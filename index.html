@@ -12,78 +12,192 @@
          line-height: 1.65; color: #1a1a1a; background: #ffffff; }
   h1 { font-size: 1.7rem; line-height: 1.3; margin-bottom: 4px; }
   h2 { font-size: 1.2rem; margin-top: 32px; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px; }
+  h3 { font-size: 1.02rem; margin-top: 20px; margin-bottom: 4px; }
   .meta { color: #6b7280; font-size: .92rem; margin-bottom: 8px; }
   code { background: #f3f4f6; padding: 1px 6px; border-radius: 4px; font-size: .92em; }
   ul { padding-left: 22px; }
   li { margin: 6px 0; }
   a { color: #2563eb; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: .95rem; }
+  th, td { border: 1px solid #e5e7eb; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f9fafb; }
   .box { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
   footer { margin-top: 48px; color: #6b7280; font-size: .88rem; }
-  .en { color: #6b7280; }
+  .en { color: #374151; }
+  hr { border: none; border-top: 1px solid #e5e7eb; }
 </style>
 </head>
 <body>
   <h1>Chính sách quyền riêng tư</h1>
   <div class="meta">Tiện ích: <strong>Tab Cộng Đồng AI — YouTube Community Post Generator</strong></div>
-  <div class="meta">Cập nhật lần cuối: 26/08/2026</div>
+  <div class="meta">Nhà phát triển: <strong>DG Media Holding</strong> · Liên hệ: <a href="mailto:hoangvant77internet@gmail.com">hoangvant77internet@gmail.com</a></div>
+  <div class="meta">Ngày có hiệu lực: 28/08/2026 · Cập nhật lần cuối: 28/08/2026</div>
 
   <div class="box">
-    <strong>Tóm tắt:</strong> Tiện ích này <strong>không thu thập, không bán và không gửi dữ liệu cá nhân của bạn về máy chủ của chúng tôi</strong>.
-    Mọi cài đặt (bao gồm API key Gemini do bạn tự nhập) được lưu <strong>ngay trên trình duyệt của bạn</strong>.
+    <strong>Tóm tắt:</strong> Tiện ích này <strong>không có máy chủ riêng</strong>, <strong>không bán</strong> và
+    <strong>không chuyển dữ liệu của bạn về nhà phát triển</strong>. Dữ liệu bạn nhập được lưu <strong>cục bộ ngay trên
+    trình duyệt của bạn</strong>. Luồng dữ liệu ra ngoài <strong>duy nhất</strong> là văn bản bạn chủ động yêu cầu tạo,
+    được gửi trực tiếp tới <strong>Google Gemini API</strong> bằng <strong>API key của chính bạn</strong>. Phần bên dưới
+    mô tả đầy đủ tiện ích <strong>thu thập</strong>, <strong>sử dụng</strong>, <strong>lưu trữ</strong> và
+    <strong>chia sẻ</strong> những dữ liệu gì và với những bên nào.
   </div>
 
-  <h2>1. Chúng tôi xử lý dữ liệu gì</h2>
-  <p>Để hoạt động, tiện ích lưu các thông tin sau <strong>chỉ trên thiết bị của bạn</strong> (qua <code>chrome.storage</code>):</p>
-  <ul>
-    <li><strong>API key Gemini</strong> do chính bạn nhập vào.</li>
-    <li><strong>Cài đặt cá nhân:</strong> ngôn ngữ, chủ đề kênh, định dạng bài được phép, hồ sơ kênh.</li>
-    <li><strong>Lịch sử tối đa 60 bài gần nhất</strong> và số liệu KPI của riêng bạn.</li>
-    <li><strong>Nội dung bài</strong> bạn tạo hoặc dán trong ô soạn bài Tab Cộng đồng của YouTube.</li>
-  </ul>
-  <p>Chúng tôi <strong>không</strong> thu thập tên, email, mật khẩu, dữ liệu duyệt web, vị trí hay bất kỳ thông tin định danh nào của bạn.</p>
+  <h2>1. Dữ liệu tiện ích thu thập / xử lý</h2>
+  <p>Để hoạt động, tiện ích thu thập và lưu <strong>chỉ trên thiết bị của bạn</strong> (qua <code>chrome.storage.local</code>)
+     các loại dữ liệu sau:</p>
+  <table>
+    <thead>
+      <tr><th>Loại dữ liệu</th><th>Ví dụ cụ thể</th><th>Cách thu thập</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Thông tin xác thực</strong> (Authentication information)</td>
+        <td>API key Google Gemini do chính bạn nhập vào.</td>
+        <td>Bạn tự nhập trong màn hình cài đặt của tiện ích.</td>
+      </tr>
+      <tr>
+        <td><strong>Nội dung người dùng tạo</strong> (User-generated content)</td>
+        <td>Chủ đề, đề bài và nội dung bài Cộng đồng bạn soạn, tạo hoặc dán.</td>
+        <td>Bạn tự nhập trong tiện ích hoặc trong ô soạn bài.</td>
+      </tr>
+      <tr>
+        <td><strong>Nội dung trang web</strong> (Website content)</td>
+        <td>Văn bản trong ô soạn bài Tab Cộng đồng trên <code>youtube.com</code> của chính bạn (chỉ khi bạn dùng chức năng điền/chèn bài).</td>
+        <td>Đọc/ghi tại chỗ trên trang YouTube đang mở, không gửi đi đâu.</td>
+      </tr>
+      <tr>
+        <td><strong>Tùy chọn &amp; hoạt động trong tiện ích</strong> (Preferences &amp; app activity)</td>
+        <td>Ngôn ngữ, chủ đề kênh, định dạng bài được phép, hồ sơ kênh, lịch chạy bạn đặt, lịch sử tối đa 60 bài gần nhất, số liệu KPI của riêng bạn.</td>
+        <td>Sinh ra từ thao tác của bạn trong tiện ích.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Tiện ích KHÔNG thu thập:</strong> tên, email, mật khẩu (ngoài API key nêu trên), số điện thoại, thông tin
+     tài chính hoặc thanh toán, thông tin sức khỏe, vị trí địa lý, lịch sử duyệt web, danh sách trang đã xem, nội dung
+     liên lạc cá nhân, hay bất kỳ thông tin định danh cá nhân nào khác. Tiện ích không dùng cookie theo dõi và không
+     chạy bất kỳ công cụ phân tích (analytics) nào.</p>
 
-  <h2>2. Dữ liệu được gửi đi đâu</h2>
-  <p>Tiện ích <strong>không có máy chủ riêng</strong> và không gửi dữ liệu về nhà phát triển. Chỉ có một luồng dữ liệu ra ngoài duy nhất:</p>
+  <h2>2. Cách tiện ích sử dụng dữ liệu</h2>
+  <p>Dữ liệu ở Mục 1 chỉ được dùng để cung cấp chính chức năng bạn yêu cầu:</p>
   <ul>
-    <li>Khi bạn yêu cầu tạo nội dung, phần văn bản/chủ đề bạn cung cấp được gửi trực tiếp tới
-      <strong>Google Gemini API</strong> bằng <strong>API key của chính bạn</strong>, để trả về bài viết gợi ý.
-      Việc này tuân theo
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách quyền riêng tư của Google</a>.</li>
+    <li><strong>API key Gemini</strong> — chỉ dùng để gọi Google Gemini API tạo nội dung bài theo yêu cầu của bạn.</li>
+    <li><strong>Nội dung bạn tạo/dán và nội dung ô soạn bài</strong> — dùng để tạo, hiển thị, chỉnh sửa và điền bài vào Tab Cộng đồng YouTube của bạn.</li>
+    <li><strong>Tùy chọn, lịch chạy, lịch sử, KPI</strong> — dùng để nhớ cấu hình, chạy lịch chuẩn bị bài bạn đặt, hiển thị lại lịch sử và thống kê cho riêng bạn.</li>
   </ul>
-  <p>Không có dữ liệu nào được chia sẻ với bên thứ ba nào khác.</p>
+  <p>Tiện ích <strong>không</strong> dùng dữ liệu của bạn cho quảng cáo, không tạo hồ sơ hành vi (profiling), không
+     huấn luyện mô hình AI của nhà phát triển, và không phục vụ mục đích nào ngoài các chức năng nêu trên.</p>
 
-  <h2>3. Lý do các quyền (permissions)</h2>
+  <h2>3. Cách tiện ích lưu trữ &amp; thời gian lưu</h2>
   <ul>
-    <li><code>storage</code> — lưu cài đặt, API key và lịch sử bài <em>trên máy bạn</em>. Không dữ liệu nào rời khỏi thiết bị vì mục này.</li>
+    <li>Toàn bộ dữ liệu được lưu <strong>cục bộ trên trình duyệt của bạn</strong> qua <code>chrome.storage.local</code>.
+        Nhà phát triển <strong>không</strong> có bản sao nào và <strong>không</strong> có máy chủ lưu trữ.</li>
+    <li>Dữ liệu được giữ cho đến khi bạn tự xóa. Lịch sử bài được giới hạn tối đa <strong>60 bài gần nhất</strong>;
+        bài cũ hơn tự động bị loại bỏ.</li>
+    <li><strong>Bạn có toàn quyền xóa bất cứ lúc nào:</strong> xóa dữ liệu tiện ích trong Chrome, hoặc gỡ cài đặt tiện ích
+        — cả hai đều xóa sạch mọi cài đặt, API key, nội dung và lịch sử đã lưu. Không có bản sao nào tồn tại ở nơi khác.</li>
+  </ul>
+
+  <h2>4. Chia sẻ dữ liệu &amp; các bên thứ ba</h2>
+  <p>Tiện ích <strong>không bán, không cho thuê, không trao đổi</strong> dữ liệu của bạn. Danh sách <strong>đầy đủ</strong>
+     các bên có thể nhận dữ liệu:</p>
+  <table>
+    <thead>
+      <tr><th>Bên nhận</th><th>Dữ liệu được gửi</th><th>Mục đích</th><th>Chính sách của họ</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Google (Gemini API)</strong></td>
+        <td>Chỉ phần văn bản/chủ đề bạn chủ động yêu cầu tạo, kèm API key của chính bạn.</td>
+        <td>Trả về nội dung bài gợi ý theo yêu cầu của bạn.</td>
+        <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Ngoài Google Gemini API nêu trên, <strong>không có bất kỳ bên thứ ba nào khác</strong> nhận dữ liệu của bạn —
+     không có mạng quảng cáo, không có nhà môi giới dữ liệu (data broker), không có công cụ phân tích, và không có
+     máy chủ của nhà phát triển. Tiện ích chỉ có thể tiết lộ dữ liệu khi luật pháp bắt buộc theo lệnh hợp lệ của
+     cơ quan có thẩm quyền.</p>
+
+  <h2>5. Cam kết sử dụng có giới hạn (Limited Use)</h2>
+  <p>Việc sử dụng và chuyển giao dữ liệu người dùng của tiện ích tuân thủ
+     <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use/" target="_blank" rel="noopener">Chính sách Sử dụng có giới hạn (Limited Use) của Chrome Web Store</a>
+     và <a href="https://developer.chrome.com/docs/webstore/program-policies/" target="_blank" rel="noopener">Chính sách Chương trình dành cho nhà phát triển của Chrome Web Store</a>.
+     Dữ liệu người dùng chỉ được dùng để cung cấp và cải thiện chức năng mà người dùng thấy được; không bán, không dùng
+     cho quảng cáo, và không chuyển cho bên thứ ba trừ các trường hợp được các chính sách trên cho phép.</p>
+
+  <h2>6. Quyền của bạn</h2>
+  <p>Vì dữ liệu chỉ nằm trên thiết bị của bạn, bạn có thể <strong>xem, chỉnh sửa và xóa</strong> mọi dữ liệu bất cứ lúc nào
+     ngay trong tiện ích hoặc qua phần quản lý dữ liệu tiện ích của Chrome. Mọi thắc mắc về dữ liệu, liên hệ email ở Mục 9.</p>
+
+  <h2>7. Giải thích các quyền (permissions)</h2>
+  <ul>
+    <li><code>storage</code> — lưu cài đặt, API key và lịch sử bài <em>trên máy bạn</em>. Không dữ liệu nào rời khỏi thiết bị vì quyền này.</li>
     <li><code>alarms</code> — chạy lịch chuẩn bị bài theo giờ bạn tự đặt và chạy bù khi lỡ lịch.</li>
-    <li><code>scripting</code> — chèn nội dung vào ô soạn bài Tab Cộng đồng trên <strong>youtube.com của chính bạn</strong>. Chỉ chạy trên youtube.com.</li>
+    <li><code>scripting</code> — chèn nội dung vào ô soạn bài Tab Cộng đồng trên <strong>youtube.com của chính bạn</strong>; chỉ chạy trên youtube.com.</li>
     <li><code>notifications</code> — báo cho bạn khi bài theo lịch đã chuẩn bị xong hoặc khi có lỗi.</li>
-    <li>Quyền truy cập <code>youtube.com</code> — cần thiết để hiển thị và điền bài vào Tab Cộng đồng.</li>
+    <li>Quyền truy cập máy chủ <code>youtube.com</code> — cần thiết để hiển thị và điền bài vào Tab Cộng đồng.</li>
   </ul>
 
-  <h2>4. Lưu trữ &amp; xóa dữ liệu</h2>
-  <p>Vì dữ liệu chỉ nằm trên trình duyệt của bạn, bạn có toàn quyền xóa: gỡ tiện ích hoặc xóa dữ liệu tiện ích trong Chrome
-     sẽ xóa toàn bộ cài đặt, API key và lịch sử đã lưu.</p>
-
-  <h2>5. Trẻ em</h2>
+  <h2>8. Trẻ em</h2>
   <p>Tiện ích không hướng tới và không cố ý thu thập dữ liệu từ trẻ em dưới 13 tuổi.</p>
 
-  <h2>6. Thay đổi chính sách</h2>
-  <p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này kèm ngày cập nhật mới.</p>
+  <h2>9. Thay đổi chính sách &amp; liên hệ</h2>
+  <p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này kèm ngày hiệu lực mới. Mọi thắc mắc về quyền riêng tư, liên hệ nhà
+     phát triển qua email: <a href="mailto:hoangvant77internet@gmail.com">hoangvant77internet@gmail.com</a>.</p>
 
-  <h2>7. Liên hệ</h2>
-  <p>Mọi thắc mắc về quyền riêng tư, liên hệ nhà phát triển qua email:
-     <a href="mailto:hoangvant77internet@gmail.com">hoangvant77internet@gmail.com</a>.</p>
+  <hr style="margin:40px 0 20px">
+  <h2 class="en" style="border:none">English version (full)</h2>
+  <p class="en"><strong>Extension:</strong> Tab Cộng Đồng AI — YouTube Community Post Generator ·
+     <strong>Developer:</strong> DG Media Holding · <strong>Contact:</strong> hoangvant77internet@gmail.com ·
+     <strong>Effective / last updated:</strong> 2026-08-28.</p>
 
-  <hr style="margin:40px 0 20px;border:none;border-top:1px solid #e5e7eb">
-  <h2 class="en" style="border:none">English summary</h2>
-  <p class="en">This extension does <strong>not</strong> collect, sell, or transmit your personal data to our servers.
-     All settings, your own Gemini API key, and up to your 60 most recent posts are stored locally in your browser via
-     <code>chrome.storage</code>. The only outbound data flow is the text you choose to generate, sent directly to the
-     <strong>Google Gemini API using your own API key</strong>, subject to Google's Privacy Policy. Permissions
-     (storage, alarms, scripting, notifications, youtube.com host access) are used solely to store your settings locally,
-     run your scheduled posts, and insert content into your own YouTube Community tab composer. Uninstalling the extension
-     removes all stored data. Contact: hoangvant77internet@gmail.com.</p>
+  <h3 class="en">1. Data we collect / process</h3>
+  <p class="en">To function, the extension stores the following <strong>locally on your device</strong> via
+     <code>chrome.storage.local</code>:
+     <em>Authentication information</em> — your own Google Gemini API key that you enter;
+     <em>User-generated content</em> — the topics and Community post text you create, generate or paste;
+     <em>Website content</em> — text in the YouTube Community post composer on your own <code>youtube.com</code> (only when you use the fill/insert feature; read and written in place, not transmitted);
+     <em>Preferences &amp; app activity</em> — language, channel topic, allowed post formats, channel profile, your schedules, up to your 60 most recent posts, and your own KPI stats.
+     We do <strong>not</strong> collect your name, email, passwords (other than the API key above), phone number,
+     financial or payment data, health data, location, browsing history, personal communications, or any other
+     personally identifiable information. No tracking cookies and no analytics are used.</p>
+
+  <h3 class="en">2. How we use data</h3>
+  <p class="en">Data is used solely to provide the features you request: the API key to call the Google Gemini API and
+     generate content; your content and composer text to create, edit and insert posts into your YouTube Community tab;
+     preferences, schedules, history and KPI to remember your configuration, run your scheduled posts, and show your own
+     history and statistics. We do <strong>not</strong> use your data for advertising, profiling, or training our own AI
+     models, and for no purpose beyond the features above.</p>
+
+  <h3 class="en">3. Storage &amp; retention</h3>
+  <p class="en">All data is stored <strong>locally in your browser</strong> via <code>chrome.storage.local</code>. The
+     developer keeps no copy and operates no server. Data is retained until you delete it; post history is capped at your
+     60 most recent posts. Clearing the extension's data or uninstalling it removes all stored settings, API key, content
+     and history; no copy exists elsewhere.</p>
+
+  <h3 class="en">4. Data sharing &amp; third parties (all parties)</h3>
+  <p class="en">We do <strong>not</strong> sell, rent, or trade your data. The <strong>only</strong> third party that ever
+     receives any data is <strong>Google (Gemini API)</strong>, and only the text/topic you actively ask to generate,
+     sent with your own API key, in order to return suggested post content, subject to
+     <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. There are
+     <strong>no other third parties</strong> — no advertising networks, no data brokers, no analytics providers, and no
+     developer server. Data may be disclosed only if required by valid legal process.</p>
+
+  <h3 class="en">5. Limited Use compliance</h3>
+  <p class="en">This extension's use and transfer of user data complies with the
+     <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use/" target="_blank" rel="noopener">Chrome Web Store Limited Use policy</a>
+     and the <a href="https://developer.chrome.com/docs/webstore/program-policies/" target="_blank" rel="noopener">Chrome Web Store Developer Program Policies</a>.
+     User data is used only to provide and improve the user-facing feature; it is never sold, used for advertising, or
+     transferred to third parties except as permitted by those policies.</p>
+
+  <h3 class="en">6–9. Your rights · Permissions · Children · Changes</h3>
+  <p class="en">Because data lives only on your device, you can view, edit and delete all of it at any time in the
+     extension or via Chrome's extension data controls. Permissions used: <code>storage</code> (local storage of your
+     settings/API key/history), <code>alarms</code> (your scheduled posts), <code>scripting</code> (insert content into
+     your own YouTube Community composer, youtube.com only), <code>notifications</code> (status alerts), and
+     <code>youtube.com</code> host access (to display and fill the Community tab). The extension is not directed to and
+     does not knowingly collect data from children under 13. Material changes will be posted here with a new effective
+     date. Contact: hoangvant77internet@gmail.com.</p>
 
   <footer>© 2026 DG Media Holding — Tab Cộng Đồng AI. Trang này chỉ mô tả chính sách quyền riêng tư của tiện ích.</footer>
 </body>
